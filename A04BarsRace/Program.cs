@@ -4,4 +4,3 @@ using A04BarsRace;
 
 Graph graph = new Graph();
 graph.Start();
-//dumby
