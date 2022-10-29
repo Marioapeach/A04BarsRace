@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace A04BarsRace
 {
     /// <summary>
-    /// Represents the number of elemeninations a player in the Overwatch league has obtained.
+    /// Represents the number of eliminations a player in the Overwatch league has obtained.
     /// </summary>
     public class Bar
     {

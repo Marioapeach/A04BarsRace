@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace A04BarsRace
 {
     /// <summary>
-    /// Contains all of the bars in the bar race.
+    /// Contains all of the bars in the bar race!
     /// </summary>
     public class Graph
     {
