@@ -82,6 +82,7 @@ namespace A04BarsRace
             }
             return bars;
         }
+        
         /// <summary>
         /// Prints Overwatch logo, but currently unsupported because it uses braille 
         /// </summary>
