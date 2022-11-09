@@ -20,8 +20,10 @@ Team[] teams = {
     new Team("Philadelphia Fusion"),
     new Team("San Francisco Shock"),
     new Team("Seoul Dynasty"),
+    new Team("Shanghai Dragons"),
     new Team("Toronto Defiant"),
-    new Team("Vancouver Titans")
+    new Team("Vancouver Titans"),
+    new Team("Washington Justice")
 };
 
 Console.CursorTop = teams.Length + 10;
@@ -39,5 +41,5 @@ for (int j = 0; j < 6; j++)
 
 
 // Footer
-Console.CursorTop = 20;
+Console.CursorTop = 22;
 Console.ForegroundColor = ConsoleColor.DarkGray;
