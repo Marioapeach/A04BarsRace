@@ -15,20 +15,14 @@ namespace A04BarsRace
         public int StartLeft { get; }
         private int CurrentKills { get; set; }
         public int TargetNumberOfKills { get; set; }
-        public ConsoleColor BarColor { get; }
-        public ConsoleColor TextColor { get; }
-        public string TeamName { get; }
         public int KillsPerUpdate { get; set; }
-        public Team Team { get; set; }
+        private Team Team { get; set; }
 
         public Bar(int startLeft, int length, Team team)
         {
             Team = team;
             StartLeft = startLeft;
             CurrentKills = length;
-            BarColor = team.GetBarColor();
-            TextColor = team.GetTextColor();
-            TeamName = team.Name;
         }
 
         /// <summary>
@@ -44,12 +38,12 @@ namespace A04BarsRace
             Console.Write(new string(' ', Console.WindowWidth));
 
             // Paint Name
-            Console.BackgroundColor = BarColor;
-            Console.ForegroundColor = TextColor;
-            Console.Write($"{TeamName.PadRight(22)}\t");
+            Console.BackgroundColor = Team.GetBarColor();
+            Console.ForegroundColor = Team.GetTextColor();
+            Console.Write($"{Team.Name.PadRight(22)}\t");
 
             // Paint Bar
-            Console.BackgroundColor = BarColor;
+            Console.BackgroundColor = Team.GetBarColor();
             Console.Write(new string(' ', CurrentKills / 180));
 
             // Add Buffer
@@ -57,8 +51,8 @@ namespace A04BarsRace
             Console.Write("    ");
 
             // Paint Number Kills
-            Console.BackgroundColor = BarColor;
-            Console.ForegroundColor = TextColor;
+            Console.BackgroundColor = Team.GetBarColor();
+            Console.ForegroundColor = Team.GetTextColor();
             Console.WriteLine($"{CurrentKills}".PadRight(6));
 
             Console.BackgroundColor = originalBackground;
