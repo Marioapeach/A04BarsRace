@@ -107,7 +107,7 @@ namespace A04BarsRace
         /// <returns></returns>
         public Team GetTeam()
         {
-
+            return Team;
         }
     }
 }
