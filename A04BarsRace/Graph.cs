@@ -82,5 +82,28 @@ namespace A04BarsRace
             }
             return bars;
         }
+        /// <summary>
+        /// Prints Overwatch logo, but currently unsupported because it uses braille 
+        /// </summary>
+        /// <returns>The logo art</returns>
+        public string PrintLogo(){
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("        ⡀⢄⢢⠢⡕⢣⠚⡔⢣⠎⡔⡠⠤⢀");
+            sb.AppendLine("⠀⠀⠀⠀⠀⠀⡔⢣⠜⡌⣆⠳⣌⢣⡙⣌⢣⠚⡴⢡⢋⠖⡬⢄");
+            sb.AppendLine("⠀⠀⠀⣠⣾⣧⡈⢱⠪⢴⠌⠓⠈⠂⠀⠀⠙⠈⠒⠡⢞⡸⢁⣴⣷⣄");
+            sb.AppendLine("⠀⠀⣼⣿⣿⣿⣿⡆⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣦");
+            sb.AppendLine("⠀⣼⣿⣿⣿⣿⠋⠀⠀⠀⠀⠀⠀⢀⡆⢰⡀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣧");
+            sb.AppendLine("⢸⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⣾⡇⢸⣷⡀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⡇");
+            sb.AppendLine("⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⣾⣿⡇⢸⣿⣧⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿");
+            sb.AppendLine("⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⣀⣼⣿⣿⡇⢸⣿⣿⣷⣄⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿");
+            sb.AppendLine("⣿⣿⣿⣿⣇⠀⠀⠀⣠⣾⣿⣿⣿⣿⡇⢸⣿⣿⣿⣿⣷⣀⠀⠀⠀⢸⣿⣿⣿⣿");
+            sb.AppendLine("⢸⣿⣿⣿⣿⡄⣠⣾⣿⣿⣿⣿⡿⠋⠀⠀⠙⢿⣿⣿⣿⣿⣷⣄⢠⣿⣿⣿⣿⡇");
+            sb.AppendLine("⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀");
+            sb.AppendLine("⠀⠀⢻⣿⣿⣿⣿⣿⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⡟⠀⠀");
+            sb.AppendLine("⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣶⣤⣀⣀⣀⣀⣀⣀⣤⣶⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀");
+            sb.AppendLine("⠀⠀⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀");
+            sb.AppendLine("⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠿⠿⣿⣿⣿⣿⣿⣿⠿⠿⠛⠉        ");
+            return sb.ToString();
+        }
     }
 }

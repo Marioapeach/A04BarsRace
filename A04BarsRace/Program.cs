@@ -2,6 +2,7 @@
 
 using A04BarsRace;
 using System.Globalization;
+using System.Text;
 
 Team[] teams = {
     new Team("Atlanta Reign"), 
@@ -31,20 +32,23 @@ foreach (Team team in teams) {
     team.PrintKillsArray();
 }
 */
-
+Graph graph = new Graph(teams);
+Console.OutputEncoding = System.Text.Encoding.UTF8;
+Console.WriteLine(graph.PrintLogo());
 Console.ForegroundColor = ConsoleColor.DarkYellow;
 Console.BackgroundColor = ConsoleColor.White;
 Console.WriteLine("Press enter to start the bar race.");
 ConsoleKey key;
+Console.ForegroundColor = ConsoleColor.White;
+Console.BackgroundColor = ConsoleColor.Black;
 do
 {
     key = Console.ReadKey(true).Key;
 } while (key != ConsoleKey.Enter);
 Console.Clear();
 
-Console.ForegroundColor = ConsoleColor.White;
-Console.BackgroundColor = ConsoleColor.Black;
-Graph graph = new Graph(teams);
+
+
 for (int j = 0; j < 6; j++)
 {
     graph.Start(j);
@@ -54,3 +58,4 @@ for (int j = 0; j < 6; j++)
 // Footer
 Console.CursorTop = 22;
 Console.ForegroundColor = ConsoleColor.DarkGray;
+
