@@ -33,8 +33,8 @@ foreach (Team team in teams) {
 }
 */
 Graph graph = new Graph(teams);
-Console.OutputEncoding = System.Text.Encoding.UTF8;
-Console.WriteLine(graph.PrintLogo());
+//Console.OutputEncoding = System.Text.Encoding.UTF8;
+//Console.WriteLine(graph.PrintLogo());
 Console.ForegroundColor = ConsoleColor.DarkYellow;
 Console.BackgroundColor = ConsoleColor.White;
 Console.WriteLine("Press enter to start the bar race.");
@@ -48,7 +48,7 @@ do
 Console.Clear();
 
 
-
+Console.WriteLine("\tWhich team has the best killer instincts in OWL 2022?");
 for (int j = 0; j < 6; j++)
 {
     graph.Start(j);
