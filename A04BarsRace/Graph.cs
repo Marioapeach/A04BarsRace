@@ -55,24 +55,6 @@ namespace A04BarsRace
                 }
                 Array.Sort(Bars);
                 Thread.Sleep(5);
-
-                /*
-                ConsoleKey key;
-                key = Console.ReadKey(true).Key;
-                if (key == ConsoleKey.Spacebar)
-                {
-                    bool loop = true;
-                    while(loop)
-                    {
-                        key = ConsoleKey.A;
-                        key = Console.ReadKey(true).Key;
-                        if (key == ConsoleKey.Spacebar)
-                        {
-                            loop = false;
-                        }
-                    }
-                }
-                */
             }
             
         }

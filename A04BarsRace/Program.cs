@@ -25,15 +25,26 @@ Team[] teams = {
     new Team("Vancouver Titans"),
     new Team("Washington Justice")
 };
-
+/*
 Console.CursorTop = teams.Length + 10;
 foreach (Team team in teams) {
     team.PrintKillsArray();
 }
+*/
 
+Console.ForegroundColor = ConsoleColor.DarkYellow;
+Console.BackgroundColor = ConsoleColor.White;
+Console.WriteLine("Press enter to start the bar race.");
+ConsoleKey key;
+do
+{
+    key = Console.ReadKey(true).Key;
+} while (key != ConsoleKey.Enter);
+Console.Clear();
 
+Console.ForegroundColor = ConsoleColor.White;
+Console.BackgroundColor = ConsoleColor.Black;
 Graph graph = new Graph(teams);
-
 for (int j = 0; j < 6; j++)
 {
     graph.Start(j);
