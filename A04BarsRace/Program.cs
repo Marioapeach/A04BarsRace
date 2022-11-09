@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using A04BarsRace;
+using System.Globalization;
+
 Team[] teams = {
     new Team("Atlanta Reign"), 
     new Team("Boston Uprising"),
@@ -21,9 +23,20 @@ Team[] teams = {
     new Team("Toronto Defiant"),
     new Team("Vancouver Titans")
 };
-
+/*
 foreach (Team team in teams) {
     team.PrintKillsArray();
 }
-//Graph graph = new Graph();
-//graph.Start();
+*/
+
+Graph graph = new Graph(teams);
+
+for (int j = 0; j < 6; j++)
+{
+    graph.Start(j);
+}
+
+
+// Footer
+Console.CursorTop = 20;
+Console.ForegroundColor = ConsoleColor.DarkGray;

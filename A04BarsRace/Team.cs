@@ -20,7 +20,7 @@ namespace A04BarsRace
             SetKillsArray(name);
         }
 
-        string Name { get; }
+        public string Name { get; }
         ConsoleColor BarColor { get; set; }
         ConsoleColor TextColor { get; set; }
         int[] KillsPerMonth { get; set; }
@@ -144,6 +144,29 @@ namespace A04BarsRace
                 default: Console.Error.WriteLine("No such team found. Check your spelling and try again!");
                     break;
             }
+        }
+
+        /// <summary>
+        /// Returns the ConsoleColor for this team's bar.
+        /// </summary>
+        /// <returns></returns>
+        public ConsoleColor GetBarColor()
+        {
+            return BarColor;
+        }
+
+        /// <summary>
+        /// Returns the ConsoleColor for this team's text.
+        /// </summary>
+        /// <returns></returns>
+        public ConsoleColor GetTextColor()
+        {
+            return TextColor;
+        }
+
+        public int[] GetKillsPerMonth()
+        {
+            return KillsPerMonth;
         }
     }
 }
