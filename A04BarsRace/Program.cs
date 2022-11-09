@@ -23,11 +23,12 @@ Team[] teams = {
     new Team("Toronto Defiant"),
     new Team("Vancouver Titans")
 };
-/*
+
+Console.CursorTop = teams.Length + 10;
 foreach (Team team in teams) {
     team.PrintKillsArray();
 }
-*/
+
 
 Graph graph = new Graph(teams);
 

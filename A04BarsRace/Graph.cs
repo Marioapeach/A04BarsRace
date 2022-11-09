@@ -11,7 +11,6 @@ namespace A04BarsRace
     /// </summary>
     public class Graph
     {
-        private Team[] Teams { get; }
         private Bar[] Bars { get; }
         private int[] NewKills { get; set; }
         private int[] KillsPerUpdate { get; set; }
@@ -19,8 +18,7 @@ namespace A04BarsRace
 
         public Graph (Team[] teams)
         {
-            Teams = teams;
-            Bars = CreateBarsArray();
+            Bars = CreateBarsArray(teams);
             NewKills = new int[Bars.Length];
             KillsPerUpdate = new int[Bars.Length];
         }
@@ -33,16 +31,21 @@ namespace A04BarsRace
             for (int i = 0; i < Bars.Length; i++)
             {
                 Bars[i].Paint(Bars.Length - i);
-                NewKills[i] = Teams[i].GetKillsPerMonth()[currentMonth];
+                NewKills[i] = Bars[i].Team.GetKillsPerMonth()[currentMonth];
                 Bars[i].TargetNumberOfKills = NewKills[i];
-                // KillsPerUpdate[i] = (NewKills[i] - Bars[i].GetCurrentKills()) / 50;
+                int killsPerUpdate = (NewKills[i] - Bars[i].GetCurrentKills()) / 50;
+                if (killsPerUpdate < 0)
+                {
+                    killsPerUpdate = 0;
+                }
+                Bars[i].KillsPerUpdate = killsPerUpdate;
             }
             
             while (!MonthFinished())
             {
                 foreach (Bar bar in Bars)
                 {
-                    bar.UpdateKills(bar.TargetNumberOfKills);
+                    bar.UpdateKills(bar.KillsPerUpdate);
                 }
                 Array.Sort(Bars);
                 int topPosition = Bars.Length;
@@ -51,7 +54,25 @@ namespace A04BarsRace
                     bar.Paint(topPosition--);
                 }
                 Array.Sort(Bars);
-                Thread.Sleep(500);
+                Thread.Sleep(5);
+
+                /*
+                ConsoleKey key;
+                key = Console.ReadKey(true).Key;
+                if (key == ConsoleKey.Spacebar)
+                {
+                    bool loop = true;
+                    while(loop)
+                    {
+                        key = ConsoleKey.A;
+                        key = Console.ReadKey(true).Key;
+                        if (key == ConsoleKey.Spacebar)
+                        {
+                            loop = false;
+                        }
+                    }
+                }
+                */
             }
             
         }
@@ -69,12 +90,12 @@ namespace A04BarsRace
             return IsFinsished;
         }
 
-        private Bar[] CreateBarsArray()
+        private Bar[] CreateBarsArray(Team[] teams)
         {
-            Bar[] bars = new Bar[Teams.Length];
-            for (int i = 0; i < Teams.Length; i++)
+            Bar[] bars = new Bar[teams.Length];
+            for (int i = 0; i < teams.Length; i++)
             {
-                Team currentTeam = Teams[i];
+                Team currentTeam = teams[i];
                 bars[i] = new Bar(8, 0, currentTeam);
             }
             return bars;

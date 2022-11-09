@@ -18,9 +18,12 @@ namespace A04BarsRace
         public ConsoleColor BarColor { get; }
         public ConsoleColor TextColor { get; }
         public string TeamName { get; }
+        public int KillsPerUpdate { get; set; }
+        public Team Team { get; set; }
 
         public Bar(int startLeft, int length, Team team)
         {
+            Team = team;
             StartLeft = startLeft;
             CurrentKills = length;
             BarColor = team.GetBarColor();
@@ -83,7 +86,7 @@ namespace A04BarsRace
         /// <param name="newKills"></param>
         public void UpdateKills(int newKills)
         {
-            /*
+            
             if (CurrentKills + newKills >= TargetNumberOfKills)
             {
                 CurrentKills = TargetNumberOfKills;
@@ -91,8 +94,8 @@ namespace A04BarsRace
             {
                 CurrentKills += newKills;
             }
-            */
-            CurrentKills = newKills;
+            
+            //CurrentKills = newKills;
         }
 
         /// <summary>
