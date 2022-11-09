@@ -31,7 +31,7 @@ namespace A04BarsRace
             for (int i = 0; i < Bars.Length; i++)
             {
                 Bars[i].Paint(Bars.Length - i);
-                NewKills[i] = Bars[i].Team.GetKillsPerMonth()[currentMonth];
+                NewKills[i] = Bars[i].GetTeam().GetKillsPerMonth()[currentMonth];
                 Bars[i].TargetNumberOfKills = NewKills[i];
                 int killsPerUpdate = (NewKills[i] - Bars[i].GetCurrentKills()) / 50;
                 if (killsPerUpdate < 0)

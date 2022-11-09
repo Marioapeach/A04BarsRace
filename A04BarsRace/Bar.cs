@@ -100,5 +100,14 @@ namespace A04BarsRace
         {
             return CurrentKills;
         }
+
+        /// <summary>
+        /// Returns this Bar's team
+        /// </summary>
+        /// <returns></returns>
+        public Team GetTeam()
+        {
+
+        }
     }
 }
