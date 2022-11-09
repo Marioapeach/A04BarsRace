@@ -133,6 +133,10 @@ namespace A04BarsRace
                     BarColor = ConsoleColor.DarkYellow;
                     TextColor = ConsoleColor.Black;
                     break;
+                case "SHANGHAI DRAGONS":
+                    BarColor = ConsoleColor.Red;
+                    TextColor = ConsoleColor.White;
+                    break;
                 case "TORONTO DEFIANT":
                     BarColor = ConsoleColor.DarkGray;
                     TextColor = ConsoleColor.White;
@@ -140,6 +144,10 @@ namespace A04BarsRace
                 case "VANCOUVER TITANS":
                     BarColor = ConsoleColor.DarkBlue;
                     TextColor = ConsoleColor.DarkGreen;
+                    break;
+                case "WASHINGTON JUSTICE":
+                    BarColor = ConsoleColor.Red;
+                    TextColor = ConsoleColor.DarkBlue;
                     break;
                 default: Console.Error.WriteLine("No such team found. Check your spelling and try again!");
                     break;
